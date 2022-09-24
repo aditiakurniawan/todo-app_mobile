@@ -1,12 +1,12 @@
 import { StyleSheet, View } from "react-native";
 import React from "react";
 import home from "../assets/home.png";
-import ways from "../assets/ways ToDo.png";
-import { VStack, Image, Center, HStack, Button, Text } from "native-base";
+import ways from "../assets/waysToDo.png";
+import { VStack, Image, Center, HStack, Button, Text, Box } from "native-base";
 
 const Home = () => {
   return (
-    <View w="100%" display="flex" flex={1} alignItems="center">
+    <Box w="100%" display="flex" flex={1} alignItems="center">
       <Center>
         <VStack space={1}>
           <Image source={home} alt="Alternate Text" size="228" />
@@ -34,7 +34,7 @@ const Home = () => {
           </Button>
         </VStack>
       </Center>
-    </View>
+    </Box>
   );
 };
 

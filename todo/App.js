@@ -23,7 +23,7 @@ import AddList from "./page/AddList";
 import AddCategory from "./page/AddCategory";
 import Detail from "./page/Detail";
 import Menu from "./components/Menu";
-import List from "./page/list";
+import List from "./page/List";
 // Define the config
 const config = {
   useSystemColorMode: false,
@@ -43,13 +43,13 @@ export default function App() {
         flex={1}
       >
         <VStack space={5} alignItems="center">
-          {/* <Home /> */}
+          <Home />
           {/* <Login /> */}
           {/* <Register /> */}
           {/* <AddList /> */}
           {/* <AddCategory /> */}
           {/* <Detail /> */}
-          <List />
+          {/* <List /> */}
           <Menu />
         </VStack>
       </Center>

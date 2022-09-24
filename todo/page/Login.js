@@ -98,7 +98,6 @@ const Login = () => {
           </VStack>
         </Box>
       </Center>
-      ;
     </Box>
   );
 };

@@ -110,7 +110,6 @@ const Register = () => {
           </VStack>
         </Box>
       </Center>
-      ;
     </Box>
   );
 };
