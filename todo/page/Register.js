@@ -17,7 +17,7 @@ import login from "../assets/Login.png";
 
 const Register = () => {
   return (
-    <View>
+    <Box w="100%" display="flex" flex={1} alignItems="center">
       <Center w="100%">
         <Box safeArea p="2" py="8" w="100%" maxW="300">
           <Image source={login} alt="Alternate Text" size="200" width={"500"} />
@@ -49,16 +49,37 @@ const Register = () => {
           <VStack space={4} mt="5">
             <FormControl bg="#e5e5e5" borderColor="#737373">
               {/* <FormControl.Label>Email ID</FormControl.Label> */}
-              <Input type="email" placeholder="Email" size="lg" />
+              <Input
+                type="email"
+                placeholder="Email"
+                size="lg"
+                borderColor="#737373"
+                borderWidth="1"
+                borderRadius="5px"
+              />
             </FormControl>
             <FormControl bg="#e5e5e5">
-              <Input type="name" placeholder="Name" size="lg" />
+              <Input
+                type="name"
+                placeholder="Name"
+                size="lg"
+                borderColor="#737373"
+                borderWidth="1"
+                borderRadius="5px"
+              />
             </FormControl>
             <FormControl bg="#e5e5e5">
-              <Input type="password" placeholder="Password" size="lg" />
+              <Input
+                type="password"
+                placeholder="Password"
+                size="lg"
+                borderColor="#737373"
+                borderWidth="1"
+                borderRadius="5px"
+              />
             </FormControl>
             <Button mt="8" colorScheme="indigo" bg="#ef4444">
-              <Text bold color="white">
+              <Text bold color="white" fontSize="16px">
                 Register
               </Text>
             </Button>
@@ -90,7 +111,7 @@ const Register = () => {
         </Box>
       </Center>
       ;
-    </View>
+    </Box>
   );
 };
 

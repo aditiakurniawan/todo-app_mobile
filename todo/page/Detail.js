@@ -13,33 +13,26 @@ import {
   Input,
   Link,
   Pressable,
+  Flex,
 } from "native-base";
 
 const Detail = () => {
   return (
-    <View>
-      <Box bg="#fdba74" w="350" h="500">
+    <Box w="100%" h="100%" display="flex" flex={1} alignItems="center ">
+      <Box bg="#bae6fd" w="350" h="500" px="5" py="2" m="5">
+        <Flex Flex direction="row-reverse">
+          <Button bg="#38bdf8" size="xs" my={1} mx="1" w="50" h="1">
+            Study
+          </Button>
+          {/* <Button bg="#38bdf8" size="xs" my={1} mx="1" w="50" h="1">
+            Study
+          </Button> */}
+        </Flex>
+        <Heading mb={10}>Study-Golang</Heading>
         <Text>Detail</Text>
-        <Center my="4">
-          <Pressable
-            _pressed={{
-              bg: "primary.800",
-            }}
-            bg="primary.600"
-            py="2"
-            rounded="sm"
-            px="3"
-            alignSelf="center"
-          >
-            <Text textTransform="uppercase" fontWeight="bold" color="white">
-              Pressed
-            </Text>
-            <Text>lore</Text>
-          </Pressable>
-        </Center>
-        ;
+        <Text>Date</Text>
       </Box>
-    </View>
+    </Box>
   );
 };
 

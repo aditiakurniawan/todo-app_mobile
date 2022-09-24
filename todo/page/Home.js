@@ -6,7 +6,7 @@ import { VStack, Image, Center, HStack, Button, Text } from "native-base";
 
 const Home = () => {
   return (
-    <View>
+    <View w="100%" display="flex" flex={1} alignItems="center">
       <Center>
         <VStack space={1}>
           <Image source={home} alt="Alternate Text" size="228" />
@@ -23,12 +23,12 @@ const Home = () => {
         </VStack>
         <VStack space={4} mt={9}>
           <Button bg="#ef4444" width={"320"} height={"10"}>
-            <Text bold color="white">
+            <Text bold color="white" fontSize="16px">
               Login
             </Text>
           </Button>
           <Button bg="#a3a3a3" width={"320"} height={"10"}>
-            <Text bold color="white">
+            <Text bold color="white" fontSize="16px">
               Register
             </Text>
           </Button>

@@ -22,6 +22,8 @@ import Register from "./page/Register";
 import AddList from "./page/AddList";
 import AddCategory from "./page/AddCategory";
 import Detail from "./page/Detail";
+import Menu from "./components/Menu";
+import List from "./page/list";
 // Define the config
 const config = {
   useSystemColorMode: false,
@@ -46,7 +48,9 @@ export default function App() {
           {/* <Register /> */}
           {/* <AddList /> */}
           {/* <AddCategory /> */}
-          <Detail />
+          {/* <Detail /> */}
+          <List />
+          <Menu />
         </VStack>
       </Center>
     </NativeBaseProvider>
