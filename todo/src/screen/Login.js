@@ -1,5 +1,5 @@
 import { StyleSheet, View } from "react-native";
-import React from "react";
+import * as React from "react";
 import {
   VStack,
   Image,
@@ -13,14 +13,68 @@ import {
   Input,
   Link,
 } from "native-base";
-import login from "../../assets/Login.png";
+import loginImg from "../../assets/Login.png";
+import axios from "axios";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const Login = ({ navigation }) => {
+  const [isLogin, setIsLogin] = React.useState(false);
+  const [login, setLogin] = React.useState({
+    email: "",
+    password: "",
+  });
+
+  const handleChanges = (title, value) => {
+    setLogin({
+      ...login,
+      [title]: value,
+    });
+  };
+
+  console.log(login);
+
+  const handlelogin = async () => {
+    try {
+      const config = {
+        headers: {
+          "content-type": "application/json",
+        },
+      };
+
+      const body = JSON.stringify(login);
+      setIsLogin(true);
+      const res = await axios.post(
+        "https://api.kontenbase.com/query/api/v1/1862eae5-48ba-4052-bfc8-a24876e43d66/auth/login",
+        body,
+        config
+      );
+      console.log(res);
+      setIsLogin(false);
+      if (res) {
+        await AsyncStorage.setItem("token", res.data.token);
+      }
+      const value = await AsyncStorage.getItem("token");
+      if (value != null) {
+        console.log(value);
+        navigation.navigate("List");
+      }
+      console.log(value);
+    } catch (error) {
+      console.log(error);
+      alert(error.res.data.message);
+    }
+  };
+
   return (
     <Box w="100%" display="flex" flex={1} alignItems="center">
       <Center w="100%">
         <Box safeArea p="2" py="8" w="100%" maxW="300">
-          <Image source={login} alt="Alternate Text" size="200" width={"500"} />
+          <Image
+            source={loginImg}
+            alt="Alternate Text"
+            size="200"
+            width={"500"}
+          />
 
           <Heading
             mt={10}
@@ -44,6 +98,7 @@ const Login = ({ navigation }) => {
                 borderColor="#737373"
                 borderWidth="1"
                 borderRadius="5px"
+                onChangeText={(value) => handleChanges("email", value)}
               />
             </FormControl>
             <FormControl bg="#e5e5e5">
@@ -54,13 +109,14 @@ const Login = ({ navigation }) => {
                 borderColor="#737373"
                 borderWidth="1"
                 borderRadius="5px"
+                onChangeText={(value) => handleChanges("password", value)}
               />
             </FormControl>
             <Button
               mt="8"
               colorScheme="indigo"
               bg="#ef4444"
-              onPress={() => navigation.navigate("AddCategory")}
+              onPress={handlelogin}
             >
               <Text bold color="white" fontSize="16px">
                 Sign in

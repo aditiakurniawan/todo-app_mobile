@@ -97,12 +97,12 @@ function Navigation({ navigation }) {
         />
         <Stack.Screen
           name="AddCategory"
-          component={ButtonTab}
+          component={AddCategory}
           options={{ headerShown: false }}
         />
         <Stack.Screen
           name="List"
-          component={List}
+          component={ButtonTab}
           options={{ headerShown: false }}
         />
         <Stack.Screen
