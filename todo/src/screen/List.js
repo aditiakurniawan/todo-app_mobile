@@ -76,10 +76,10 @@ const List = ({ navigation }) => {
             borderColor="#737373"
             borderWidth="1"
           >
-            <Select.Item label="UX Research" value="ux" />
+            <Select.Item label="To" value="Do" />
             <Select.Item
-              label="Web Development"
-              value="web"
+              label="Do"
+              value="Do"
               borderColor="#737373"
               borderWidth="1"
             />
@@ -92,10 +92,10 @@ const List = ({ navigation }) => {
             borderColor="#737373"
             borderWidth="1"
           >
-            <Select.Item label="UX Research" value="ux" />
+            <Select.Item label="Active" value="Active" />
             <Select.Item
-              label="Web Development"
-              value="web"
+              label="Non Active"
+              value="NonActive"
               borderColor="#737373"
               borderWidth="1"
             />
