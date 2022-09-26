@@ -21,8 +21,8 @@ import {
 
 const AddList = ({ navigation }) => {
   return (
-    <Box w="100%" display="flex" flex={1} alignItems="center" m="5">
-      <Box safeArea p="2" py="8" w="100%" maxW="500">
+    <Box w="100%" display="flex" flex={1} alignItems="center" mx="5">
+      <Box safeArea w="100%" maxW="500">
         <Heading
           mt={10}
           size="lg"
@@ -33,7 +33,7 @@ const AddList = ({ navigation }) => {
             color: "warmGray.50",
           }}
         >
-          AddList
+          Add List
         </Heading>
         <VStack space={4} mt="5">
           <FormControl bg="#e5e5e5" w="90%">

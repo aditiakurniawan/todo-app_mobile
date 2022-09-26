@@ -7,7 +7,7 @@ import { TouchableOpacity } from "react-native-web";
 
 const Home = ({ navigation }) => {
   return (
-    <Box w="100%" display="flex" flex={1} alignItems="center">
+    <Box w="100%" display="flex" flex={1} alignItems="center" mt={10}>
       <Center>
         <VStack space={1}>
           <Image source={home} alt="Alternate Text" size="228" />
