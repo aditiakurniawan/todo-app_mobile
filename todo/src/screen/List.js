@@ -1,5 +1,5 @@
-import { StyleSheet, View } from "react-native";
-import React from "react";
+import { StyleSheet, View, CheckBox } from "react-native";
+import React, { useState } from "react";
 import {
   VStack,
   HStack,
@@ -16,9 +16,9 @@ import {
   CircleIcon,
 } from "native-base";
 import { Fontisto } from "@expo/vector-icons";
-// import Menu from "../../components/Menu";
 
 const List = ({ navigation }) => {
+  const [isSelected, setSelection] = useState(false);
   return (
     <Box m={5}>
       <HStack
@@ -41,7 +41,7 @@ const List = ({ navigation }) => {
               uri: "https://bit.ly/broken-link",
             }}
           >
-            RS
+            A
           </Avatar>
         </Flex>
       </HStack>
@@ -108,7 +108,7 @@ const List = ({ navigation }) => {
             <Text
               bold
               fontSize="12pt"
-              strikeThrough
+              strikeThrough={isSelected}
               onPress={() => navigation.navigate("Detail")}
             >
               Study-Golang-programing
@@ -119,22 +119,33 @@ const List = ({ navigation }) => {
           </HStack>
           <HStack space={16}>
             <VStack color="#a3a3a3" pr="8">
-              <Text mb="6" color="#a3a3a3" strikeThrough>
+              <Text mb="6" color="#a3a3a3" strikeThrough={isSelected}>
                 Pelajatadkjakdg jkasdhdfgrdtdtd
               </Text>
               <HStack>
                 <Fontisto name="date" color="#a3a3a3" size="12" mt="3" />
-                <Text color="#a3a3a3" fontSize="8pt">
-                  {" "}
+                <Text color="#a3a3a3" fontSize="8pt" strikeThrough={isSelected}>
                   19 July 2022
                 </Text>
               </HStack>
             </VStack>
-            <CheckCircleIcon
-              color="green.500"
-              size="30"
-              //   pl="1"
-            ></CheckCircleIcon>
+            <CheckBox
+              value={isSelected}
+              onValueChange={setSelection}
+              size="40"
+              // color="#green.500"
+              borderRadius="20px"
+              // bg="#d4d4d4"
+            />
+            {/* {isSelected ? (
+              <CheckCircleIcon color="green.500" size="40"></CheckCircleIcon>
+            ) : (
+              <CircleIcon
+                color="#d4d4d4"
+                size="30"
+                //   pl="1"
+              ></CircleIcon>
+            )} */}
           </HStack>
         </VStack>
 
