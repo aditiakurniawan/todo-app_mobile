@@ -111,16 +111,16 @@ const List = ({ navigation }) => {
               strikeThrough={isSelected}
               onPress={() => navigation.navigate("Detail")}
             >
-              Study-Golang-programing
+              Study-JavaScript-programing
             </Text>
             <Button bg="amber.400" px="2" py="0" h="22px">
               Study
             </Button>
           </HStack>
-          <HStack space={16}>
+          <HStack space={16} justifyContent="space-between">
             <VStack color="#a3a3a3" pr="8">
               <Text mb="6" color="#a3a3a3" strikeThrough={isSelected}>
-                Pelajatadkjakdg jkasdhdfgrdtdtd
+                Stage satu full JavaScript
               </Text>
               <HStack>
                 <Fontisto name="date" color="#a3a3a3" size="12" mt="3" />
@@ -133,9 +133,7 @@ const List = ({ navigation }) => {
               value={isSelected}
               onValueChange={setSelection}
               size="40"
-              // color="#green.500"
               borderRadius="20px"
-              // bg="#d4d4d4"
             />
             {/* {isSelected ? (
               <CheckCircleIcon color="green.500" size="40"></CheckCircleIcon>
@@ -149,7 +147,7 @@ const List = ({ navigation }) => {
           </HStack>
         </VStack>
 
-        <VStack bg="blue.100" py="2" px="4" mb="10">
+        {/* <VStack bg="blue.100" py="2" px="4" mb="10">
           <HStack space={32}>
             <Text bold fontSize="12pt">
               Study-Golang-programing
@@ -161,7 +159,7 @@ const List = ({ navigation }) => {
           <HStack space={16}>
             <VStack color="#a3a3a3" pr="8">
               <Text mb="6" color="#a3a3a3">
-                Pelajatadkjakdg jkasdhdfgrdtdtd
+                Pelajaran hidup seringkali redup
               </Text>
               <HStack>
                 <Fontisto name="date" color="#a3a3a3" size="12" mt="3" />
@@ -171,15 +169,10 @@ const List = ({ navigation }) => {
                 </Text>
               </HStack>
             </VStack>
-            <CircleIcon
-              color="#d4d4d4"
-              size="30"
-              //   pl="1"
-            ></CircleIcon>
+            <CircleIcon color="#d4d4d4" size="30" hidden></CircleIcon>
           </HStack>
-        </VStack>
+        </VStack> */}
       </Box>
-      {/* <Menu /> */}
     </Box>
   );
 };

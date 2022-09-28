@@ -1,25 +1,64 @@
 import { StyleSheet, View } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import {
   VStack,
-  Image,
-  Center,
-  HStack,
   Button,
   Text,
   Box,
   Heading,
   FormControl,
   Input,
-  Link,
   Select,
   CheckIcon,
   TextArea,
   Pressable,
 } from "native-base";
-// import Menu from "../../components/Menu";
+import axios from "axios";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const AddList = ({ navigation }) => {
+  const [list, setList] = React.useState(false);
+  const [form, setForm] = useState({
+    name: "",
+    category: "",
+    date: "",
+    description: "",
+  });
+
+  const handleChanges = (title, value) => {
+    setList({
+      ...list,
+      [title]: value,
+    });
+  };
+  console.log(list);
+
+  const handleAdd = async () => {
+    try {
+      const config = {
+        Headers: {
+          "Content-type": "application/json",
+        },
+      };
+      const body = JSON.stringify(list);
+      const res = await axios.post(
+        "https://api.kontenbase.com/query/api/v1/1862eae5-48ba-4052-bfc8-a24876e43d66/addlist",
+        body,
+        config
+      );
+      if (res) {
+        await AsyncStorage.setItem("token", res.data.token);
+      }
+      const value = await AsyncStorage.getItem("token");
+      if (value != null) {
+        console.log(value);
+        navigation.navigate("Home");
+      }
+    } catch (error) {
+      console.log(error);
+      alert(error.res.data.message);
+    }
+  };
   return (
     <Box w="100%" display="flex" flex={1} alignItems="center" mx="5">
       <Box safeArea w="100%" maxW="500">
@@ -45,6 +84,8 @@ const AddList = ({ navigation }) => {
               borderColor="#737373"
               borderWidth="1"
               borderRadius="5px"
+              onChangeText={(value) => handleChanges("email", value)}
+              value={form.name}
             />
           </FormControl>
           <FormControl bg="#e5e5e5" w="90%">
@@ -55,10 +96,10 @@ const AddList = ({ navigation }) => {
               borderWidth="1"
               borderRadius="5px"
             >
-              <Select.Item label="UX Research" value="ux" />
+              <Select.Item label="To" value="To" />
               <Select.Item
-                label="Web Development"
-                value="web"
+                label="Do"
+                value="Do"
                 borderColor="#737373"
                 borderWidth="1"
               />

@@ -3,7 +3,6 @@ import React from "react";
 import home from "../../assets/home.png";
 import ways from "../../assets/WaysToDo.png";
 import { VStack, Image, Center, Button, Text, Box } from "native-base";
-import { TouchableOpacity } from "react-native-web";
 
 const Home = ({ navigation }) => {
   return (

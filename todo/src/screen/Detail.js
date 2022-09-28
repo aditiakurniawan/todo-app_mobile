@@ -9,7 +9,6 @@ import {
   Flex,
   CircleIcon,
 } from "native-base";
-// import Menu from "../../components/Menu";
 
 const Detail = () => {
   return (
@@ -19,9 +18,6 @@ const Detail = () => {
           <Button bg="#7dd3fc" size="xs" mx="1" w="50" py="1">
             Study
           </Button>
-          {/* <Button bg="#38bdf8" size="xs" my={1} mx="1" w="50" h="1">
-            Study
-          </Button> */}
         </Flex>
         <HStack space={24}>
           <Heading mb={10}>Study-Golang</Heading>
@@ -29,7 +25,6 @@ const Detail = () => {
             mt={4}
             color="#d4d4d4"
             size="35"
-            //   pl="1"
           ></CircleIcon>
         </HStack>
         <Text color="#a3a3a3">Detail</Text>
